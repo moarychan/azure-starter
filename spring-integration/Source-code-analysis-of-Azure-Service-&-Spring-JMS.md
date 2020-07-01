@@ -7,4 +7,4 @@
 
 <a href="https://www.processon.com/view/link/5eea35f87d9c0844202034c6">Link this file.</a>
 
-![avator](./pic/Source code analysis of Azure Service & Spring JMS.jpg)
+![avator](./pic/Source-code-analysis-of-Azure-Service-&-Spring-JMS.jpg)
