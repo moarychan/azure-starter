@@ -313,10 +313,10 @@ Let's analyze the execution process of the above Demo. Sequence diagram shows th
 
 <a href="https://www.processon.com/view/link/5ef87e181e085326374813b5">Link this file.</a>
 
-![avator](./pic/2 Sending of Spring Integration and Event Hubs Interaction.svg)
+![avator](./pic/2 Sending of Spring Integration and Event Hubs Interaction.jpg)
 
 ### 5.2 Receiving of Spring Integration and Event Hubs Interaction
 
 <a href="https://www.processon.com/view/link/5ef9ea121e085326374b395a">Link this file.</a>
 
-![avator](./pic/3 Receiving of Spring Integration and Event Hubs interaction.svg)
+![avator](./pic/3 Receiving of Spring Integration and Event Hubs interaction.jpg)

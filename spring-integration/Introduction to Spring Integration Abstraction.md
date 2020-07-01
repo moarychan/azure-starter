@@ -198,7 +198,7 @@ public class HelloWorldApp {
 
 <a href="https://www.processon.com/diagraming/5ef9b1b6f346fb1ae58411e3">Clone this file.</a>
 
-![avator](./pic/1 Spring Integration Simple Message Execution.svg)
+![avator](./pic/1 Spring Integration Simple Message Execution.jpg)
 
 #### 2.3.7 Channel Adapter
 A channel adapter is an endpoint that connects a message channel to some other system or
