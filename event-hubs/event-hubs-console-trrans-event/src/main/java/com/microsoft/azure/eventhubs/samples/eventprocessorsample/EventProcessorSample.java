@@ -21,9 +21,9 @@ public class EventProcessorSample
     	   String consumerGroupName = "testconsumergroup";
  	   String namespaceName = "moary-event-hubs-namespace";
  	   String eventHubName = "multi-partition-event-hub";
- 	   String sasKeyName = "RootManageSharedAccessKey";
- 	   String sasKey = "PQJQ2haIjsj5od0khMOpel4absyr+wMoEjTbfSjzWIw=";
- 	   String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=moarystorage;AccountKey=FHBNPmWQb8UCHdTZAmM6G30/392Dvk7m1ikz54z3vlMtjA70VoAFLSgO7uYVQ43kgruPh9zDGI0s13SB64ySdw==;EndpointSuffix=core.windows.net";
+ 	   String sasKeyName = "xxx";
+ 	   String sasKey = "xxx";
+ 	   String storageConnectionString = "xxx";
  	   String storageContainerName = "moary-storage-container";
  	   String hostNamePrefix = "moary";
 
