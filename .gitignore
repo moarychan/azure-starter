@@ -35,4 +35,6 @@ dependency-reduced-pom.xml
 *.my
 *.user
 *.tmp
+*.azureauth
+*.yml
 /temp

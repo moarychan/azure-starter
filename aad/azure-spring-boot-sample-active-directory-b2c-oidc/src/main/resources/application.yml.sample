@@ -1,0 +1,35 @@
+azure:
+  activedirectory:
+    b2c:
+      tenant: xxx
+      oidc-enabled: true
+      client-id: xxx
+      client-secret: xxx
+      reply-url: https://localhost:8443/home # should be absolute url.
+      logout-success-url: https://localhost:8443/login
+      user-flows:
+        sign-up-or-sign-in: B2C_1_signupsignin1
+        profile-edit: B2C_1_profileediting1     # optional
+        password-reset: B2C_1_passwordreset1 # optional
+
+
+logging:
+  level:
+    root: TRACE
+    org.apache.tomcat.util.net: INFO
+#    org.zerhusen.security: TRACE
+#    org.springframework.security: TRACE
+#    sample.aad: TRACE
+#    com.microsoft: TRACE
+
+
+server:
+#    servlet:
+#        context-path: /demo
+#    http:
+#        port: 8081
+    port: 8443
+    ssl:
+        key-store: classpath:client.p12
+        key-store-password: 12345678
+        key-store-type: PKCS12
