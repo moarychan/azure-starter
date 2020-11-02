@@ -1,0 +1,59 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    azure:
+      eventhub:
+        type: eventhub
+        defaultCandidate: true
+        connection-string: "event hubs connection string"
+        checkpoint-access-key: "storage key"
+        checkpoint-storage-account: "storage account"
+        bindings:
+          consumer:
+
+      servicebus:
+        enabled: false
+    stream:
+      eventhub:
+        bindings:
+          uppercase-in-0:
+            consumer:
+              checkpoint-mode: MANUAL
+      poller:
+        fixed-delay: 3000
+      function:
+        definition: eventhub;uppercase;servicebus
+      defaultBinder: eventhub
+      binders:
+        servicebus-queue:
+          type: servicebus-queue
+          defaultCandidate: false
+          environment:
+            spring:
+              cloud:
+                azure:
+                  servicebus:
+                    enabled: true
+                    connection-string: "service bus queue connection string"
+                  eventhub:
+                    enabled: false
+      bindings:
+#        eventhub-in-0:
+#          destination: event-hub-aa
+#          binder: eventhub
+#          group: $Default
+        eventhub-out-0:
+          destination: event-hub-aa
+          binder: eventhub
+          group: $Default
+        uppercase-in-0:
+          destination: event-hub-aa
+          group: $Default
+#          checkpoint-mode: MANUAL
+        uppercase-out-0:
+          destination: space-1-queue-aa
+          binder: servicebus-queue
+        servicebus-in-0:
+          destination: space-1-queue-aa
+          binder: servicebus-queue

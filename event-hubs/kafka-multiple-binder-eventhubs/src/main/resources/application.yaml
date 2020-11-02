@@ -1,0 +1,52 @@
+spring:
+  cloud:
+    stream:
+      defaultBinder: kafka1
+      bindings:
+        order:
+          destination: orders-in
+          binder: kafka1
+        orderOutput:
+          destination: orders-in
+          binder: kafka1
+        account:
+          destination: account-in
+          binder: kafka2
+        accountOutput:
+          destination: account-in
+          binder: kafka2
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: xxx.servicebus.windows.net:9093
+                      configuration:
+                        security:
+                          protocol:
+                            SASL_SSL
+                        sasl:
+                          mechanism: PLAIN
+                          jaas:
+                            config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="";
+        kafka2:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: moaryc-evthub-2.servicebus.windows.net:9093
+                      configuration:
+                        security:
+                          protocol:
+                            SASL_SSL
+                        sasl:
+                          mechanism: PLAIN
+                          jaas:
+                            config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="xxx";

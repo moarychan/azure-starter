@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    stream:
+      defaultBinder: kafka1
+      bindings:
+        order:
+          consumer:
+            partitioned: true
+          destination: orders-in
+          binder: kafka1
+          group: order
+        orderOutput:
+          destination: orders-in
+          binder: kafka1
+        account:
+          consumer:
+            partitioned: true
+          destination: account-in
+          binder: kafka2
+          group: account
+        accountOutput:
+          destination: account-in
+          binder: kafka2
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            brokers: localhost:9092
+            autoCreateTopics: true
+        kafka2:
+          type: kafka
+          environment:
+            brokers: localhost:9092
+            autoCreateTopics: true
+

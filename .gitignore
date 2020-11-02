@@ -38,3 +38,6 @@ dependency-reduced-pom.xml
 *.azureauth
 *.yml
 /temp
+
+/build
+.gradle
