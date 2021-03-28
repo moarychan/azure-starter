@@ -3,7 +3,7 @@ package com.reactor.sample.phase.one;
 import org.reactivestreams.Subscription;
 import reactor.core.publisher.BaseSubscriber;
 
-public class SampleSubscribe<T> extends BaseSubscriber<T> {
+public class DemoBaseSubscriber<T> extends BaseSubscriber<T> {
 
     @Override
     protected void hookOnSubscribe(Subscription subscription) {
@@ -13,7 +13,7 @@ public class SampleSubscribe<T> extends BaseSubscriber<T> {
 
     @Override
     protected void hookOnNext(T value) {
-        System.out.println("Value: " + String.valueOf(value));
+        System.out.println("Value: " + value);
         request(1);
     }
 }

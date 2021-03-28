@@ -1,6 +1,5 @@
 package com.reactor.sample.phase.one;
 
-import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 
 public class DemoFluxRange {
@@ -13,7 +12,7 @@ public class DemoFluxRange {
 //        withMySubscribe();
 
         Flux<Integer> ints = Flux.range(1, 4);
-        SampleSubscribe<Integer> ss = new SampleSubscribe<>();
+        DemoBaseSubscriber<Integer> ss = new DemoBaseSubscriber<>();
         ints.subscribe(i -> System.out.println(i), error -> System.out.println(error),
             () -> System.out.println("complete"),
             s -> ss.request(10)
@@ -24,7 +23,7 @@ public class DemoFluxRange {
 
     private static void withMySubscribe() {
         Flux<Integer> ints = Flux.range(1, 4);
-        SampleSubscribe<Integer> ss = new SampleSubscribe<>();
+        DemoBaseSubscriber<Integer> ss = new DemoBaseSubscriber<>();
         ints.subscribe(i -> System.out.println(i), error -> System.out.println(error),
             () -> System.out.println("complete"),
             s -> ss.request(10)
